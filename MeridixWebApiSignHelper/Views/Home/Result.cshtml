@@ -1,0 +1,55 @@
+﻿@model MeridixWebApiSignHelper.Models.ResultModel
+
+@{
+    ViewBag.Title = "Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Result:</h2>
+<div>@Html.LabelFor(m => m.RequestUrl)</div>
+<div>@Html.DisplayFor(m => m.RequestUrl)</div>
+
+<div>@Html.LabelFor(m => m.RequestQuery)</div>
+<div>@Html.DisplayFor(m => m.RequestQuery)</div>
+
+<div>@Html.LabelFor(m => m.Token)</div>
+<div>@Html.DisplayFor(m => m.Token)</div>
+
+<div>@Html.LabelFor(m => m.Secret)</div>
+<div>@Html.DisplayFor(m => m.Secret)</div>
+
+<div>@Html.LabelFor(m => m.ParametersConcated)</div>
+<div>@Html.DisplayFor(m => m.ParametersConcated)</div>
+
+<div>@Html.LabelFor(m => m.ParametersConcatedEncoded)</div>
+<div>@Html.DisplayFor(m => m.ParametersConcatedEncoded)</div>
+
+<div>@Html.LabelFor(m => m.RequestEncoded)</div>
+<div>@Html.DisplayFor(m => m.RequestEncoded)</div>
+
+<div>@Html.LabelFor(m => m.VerbRequestQuery)</div>
+<div>@Html.DisplayFor(m => m.VerbRequestQuery)</div>
+
+<div>@Html.LabelFor(m => m.Signature)</div>
+<div>@Html.DisplayFor(m => m.Signature)</div>
+
+<div>@Html.LabelFor(m => m.SignedRequest)</div>
+
+@if (Model.Verb == "GET")
+{
+    <div>
+        <a href="@Model.SignedRequest" target="_blank">@Model.SignedRequest</a>
+    </div>    
+}
+else
+{
+    <div>
+        <div>@Model.SignedRequest</div>
+        <form method="@Model.Verb" action="@Model.SignedRequest">
+            <input type="submit" value="@Model.Verb  @Model.SignedRequest"/>
+        </form>
+    </div>
+}
+
+
+@Html.Partial("Input", Model.ParametersModel)

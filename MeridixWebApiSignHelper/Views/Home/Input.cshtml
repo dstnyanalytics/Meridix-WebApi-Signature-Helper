@@ -1,0 +1,39 @@
+﻿@model MeridixWebApiSignHelper.Models.ParametersModel
+
+<h2>Input:</h2>
+@using (Html.BeginForm("Result", "Home"))
+{
+    <div>
+        @Html.LabelFor(m => m.RequestUrl)
+    </div>
+    <div>
+        @Html.EditorFor(m => m.RequestUrl)
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.Token)
+    </div>
+    <div>
+        @Html.EditorFor(m => m.Token)
+    </div>
+    
+    <div>
+        @Html.LabelFor(m => m.Secret)
+    </div>
+            
+    <div>@Html.EditorFor(m => m.Secret)</div>
+    
+    <div>@Html.LabelFor(m => m.Nonce)</div>
+    
+    <div>@Html.EditorFor(m => m.Nonce)</div>
+
+    <div>@Html.LabelFor(m => m.Timestamp)</div>
+    
+    <div>@Html.EditorFor(m => m.Timestamp)</div>
+    
+    <div>@Html.LabelFor(m => m.HttpVerb)</div>
+    
+    <div>@Html.EditorFor(m => m.HttpVerb)</div>
+    
+    <input type="submit" value="Execute" />
+}
