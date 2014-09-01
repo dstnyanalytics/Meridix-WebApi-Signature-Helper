@@ -25,11 +25,6 @@ namespace MeridixWebApiSignHelper.Models
 
     public class ParametersModel
     {
-        //public string token = "35f94ba7c9bd4b8887b66baa8b566c28";
-        //public string secret = "2c9e39f72f434a8";
-        //public string request = "http://temporary.meridix.se/iCentrex36/SSO";
-        //public string username = "basic@sigtunahem.se";
-
         public string Token { get; set; }
         public string Secret { get; set; }
         public string Nonce { get; set; }
